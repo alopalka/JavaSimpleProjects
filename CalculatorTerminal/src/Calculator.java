@@ -47,4 +47,7 @@ public class Calculator {
     public void setCachedNumber(double cachedNumber) {
         this.cachedNumber = cachedNumber;
     }
+
+
+
 }
