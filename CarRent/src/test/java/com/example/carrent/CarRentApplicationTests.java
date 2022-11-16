@@ -1,10 +1,10 @@
-package com.example.wypozyczalnia;
+package com.example.carrent;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WypozyczalniaApplicationTests {
+class CarRentApplicationTests {
 
 	@Test
 	void contextLoads() {

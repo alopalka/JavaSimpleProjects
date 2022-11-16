@@ -1,4 +1,4 @@
-package com.example.wypozyczalnia;
+package com.example.carrent;
 
 public class Rental {
 

@@ -1,6 +1,4 @@
-package com.example.wypozyczalnia;
-
-import org.springframework.stereotype.Component;
+package com.example.carrent;
 
 public class User {
 
