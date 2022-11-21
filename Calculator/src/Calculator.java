@@ -37,27 +37,16 @@ public class Calculator implements ActionListener {
         txtField.setFont(font);
         txtField.setEditable(false);
 
-        addBtn = new JButton("+");
-        subBtn = new JButton("-");
-        mulBtn = new JButton("*");
-        divBtn = new JButton("/");
-        dotBtn = new JButton(".");
-        equBtn = new JButton("=");
-        delBtn = new JButton("Del");
-        clrBtn = new JButton("Clear");
-        negBtn = new JButton("+/-");
-        offBtn = new JButton("Off");
-
-        funcButtons.add(addBtn);
-        funcButtons.add(subBtn);
-        funcButtons.add(mulBtn);
-        funcButtons.add(divBtn);
-        funcButtons.add(dotBtn);
-        funcButtons.add(equBtn);
-        funcButtons.add(delBtn);
-        funcButtons.add(clrBtn);
-        funcButtons.add(negBtn);
-        funcButtons.add(offBtn);
+        funcButtons.add(addBtn = new JButton("+"));
+        funcButtons.add(subBtn = new JButton("-"));
+        funcButtons.add(mulBtn = new JButton("*"));
+        funcButtons.add(divBtn = new JButton("/"));
+        funcButtons.add(dotBtn = new JButton("."));
+        funcButtons.add(equBtn = new JButton("="));
+        funcButtons.add(delBtn = new JButton("Del"));
+        funcButtons.add(clrBtn = new JButton("Clr"));
+        funcButtons.add(negBtn = new JButton("+/-"));
+        funcButtons.add(offBtn = new JButton("Off"));
 
         for (JButton symbolBtn : funcButtons) {
             symbolBtn.addActionListener(this);
@@ -77,7 +66,6 @@ public class Calculator implements ActionListener {
         }
         panel.setBounds(40, 100, 400, 430);
         panel.setLayout(new GridLayout(5, 3, 6, 6));
-
 
         panel.add(numberButtons[7]);
         panel.add(numberButtons[8]);
@@ -169,7 +157,7 @@ public class Calculator implements ActionListener {
             double n = Double.parseDouble(txtField.getText());
             txtField.setText(String.valueOf(n * -1));
         }
-        if (e.getSource() == offBtn){
+        if (e.getSource() == offBtn) {
             System.exit(0);
         }
     }
