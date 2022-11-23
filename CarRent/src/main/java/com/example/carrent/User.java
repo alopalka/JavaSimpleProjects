@@ -11,4 +11,9 @@ public class User {
     public long getUserId() {
         return userId;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(userId);
+    }
 }

@@ -13,11 +13,20 @@ public class RentalStorage {
         this.rentalList = rentalList;
     }
 
-    public List<Rental> getAllRents(){
+    public List<Rental> getAllRents() {
         return rentalList;
     }
 
-    public void addRent(Rental rental){
+    public boolean isCarAvalable(String carVin) {
+        for (Rental rental : rentalList) {
+            if (rental.getCar().getVin().equalsIgnoreCase(carVin)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void addRent(Rental rental) {
         rentalList.add(rental);
     }
 }

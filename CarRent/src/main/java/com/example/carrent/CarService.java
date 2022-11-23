@@ -39,20 +39,14 @@ public class CarService {
         rentalStorage.addRent(rental);
     }
 
-//    public Rental rentCar(User user,String carVin){
-//        List<Rental> rentalList = rentalStorage.getAllRents();
-//        boolean isNotRented = rentalList
-//                .stream()
-//                .filter(e -> e.getUser().equals(user))
-//                .filter(e -> e.getCar().getVin().equalsIgnoreCase(carVin))
-//                .findAny()
-//                .isEmpty();
-//        if (isNotRented){
-//            Rental rental = new Rental(user,carStorage.getAvalableCarList().get())
-//            addRent(rental);
-//            return rental;
-//        }
-//        return null;
-//    }
+    public Rental rentCar(User u, String carVin) {
+        if (u == null) {
+            throw new IllegalArgumentException("No user was provided !");
+        }
+        if (rentalStorage.isCarAvalable(carVin)) {
+            return new Rental(u, carStorage.getCarByVin(carVin));
+        }
+        return null;
+    }
 
 }

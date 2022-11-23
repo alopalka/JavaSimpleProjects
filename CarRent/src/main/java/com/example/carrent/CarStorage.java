@@ -24,4 +24,13 @@ public class CarStorage {
         avalableCarList.add(car);
     }
 
+    public Car getCarByVin(String carVin){
+        for (Car car : avalableCarList) {
+            if (car.getVin().equalsIgnoreCase(carVin)){
+                return car;
+            }
+        }
+        return null;
+    }
+
 }
