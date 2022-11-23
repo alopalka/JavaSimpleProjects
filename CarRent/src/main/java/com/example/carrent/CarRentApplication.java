@@ -18,7 +18,7 @@ public class CarRentApplication {
         System.out.println(carService1.getAllCars());
         System.out.println(carService1.getAllRents());
 
-        System.out.println(carService1.rentCar(user1,car1.getVin()));
+        System.out.println(carService1.rentCar(user1,"2137"));
 
     }
 

@@ -20,13 +20,28 @@ public class CarStorage {
         this.avalableCarList = avalableCarList;
     }
 
-    public void addCar(Car car){
+    public void addCar(Car car) {
         avalableCarList.add(car);
     }
 
-    public Car getCarByVin(String carVin){
+    public boolean isCarExistant(String carVin) {
+        if (carVin.length() < 3) {
+            throw new IllegalArgumentException("Provided argument is incorrect!");
+        }
         for (Car car : avalableCarList) {
             if (car.getVin().equalsIgnoreCase(carVin)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Car getCarByVin(String carVin) {
+        if (carVin.length() < 3 && isCarExistant(carVin)) {
+            throw new IllegalArgumentException("Provided argument is incorrect!");
+        }
+        for (Car car : avalableCarList) {
+            if (car.getVin().equalsIgnoreCase(carVin)) {
                 return car;
             }
         }

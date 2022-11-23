@@ -43,7 +43,7 @@ public class CarService {
         if (u == null) {
             throw new IllegalArgumentException("No user was provided !");
         }
-        if (rentalStorage.isCarAvalable(carVin)) {
+        if (rentalStorage.isCarAvalable(carVin) && carStorage.isCarExistant(carVin)) {
             return new Rental(u, carStorage.getCarByVin(carVin));
         }
         return null;
