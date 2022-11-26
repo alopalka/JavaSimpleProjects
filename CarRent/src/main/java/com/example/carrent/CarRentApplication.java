@@ -3,6 +3,8 @@ package com.example.carrent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDate;
+
 @SpringBootApplication
 public class CarRentApplication {
 
@@ -18,7 +20,7 @@ public class CarRentApplication {
         System.out.println(carService1.getAllCars());
         System.out.println(carService1.getAllRents());
 
-        System.out.println(carService1.rentCar(user1,"2137"));
+        System.out.println(carService1.rentCar(user1, "2137", LocalDate.of(2023, 12, 12)));
 
     }
 

@@ -2,7 +2,9 @@ package com.example.carrent;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class CarService {
@@ -39,12 +41,13 @@ public class CarService {
         rentalStorage.addRent(rental);
     }
 
-    public Rental rentCar(User u, String carVin) {
-        if (u == null) {
-            throw new IllegalArgumentException("No user was provided !");
+    public RentalInfo rentCar(User u, String carVin, LocalDate endDate) {
+        if (u == null || endDate == null || carVin.isEmpty()) {
+            throw new IllegalArgumentException("Wrong answer was provided !");
         }
         if (rentalStorage.isCarAvalable(carVin) && carStorage.isCarExistant(carVin)) {
-            return new Rental(u, carStorage.getCarByVin(carVin));
+            rentalStorage.addRent(new Rental(u, carStorage.getCarByVin(carVin)));
+            return new RentalInfo(endDate, RentalStorage.carRentPrice(endDate, carStorage.getCarByVin(carVin)));
         }
         return null;
     }
