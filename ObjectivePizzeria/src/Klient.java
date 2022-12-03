@@ -13,7 +13,6 @@ public class Klient {
         this.nazwisko = nazwisko;
         this.adres = adres;
     }
-
     public void zlozZamowienie(Zamowienie zamowienie) {
         if (zamowienie.getKlient() != null && zamowienie.getPizza() != null && zamowienie.getPizzeria() != null) {
             zamowienia.add(zamowienie);
