@@ -5,8 +5,11 @@ import java.awt.event.ActionListener;
 
 public class TodoApp implements ActionListener {
 
-    JPanel upperPanel = new upperPanel();
-    JFrame frame = new JFrame("Todo App");
+    private upperPanel upperPanel = new upperPanel();
+    private JFrame frame = new JFrame("Todo App");
+
+    private JButton addTask;
+
 
 //    Font font = new Font("Roboto", Font.BOLD, 20);
 
@@ -21,10 +24,15 @@ public class TodoApp implements ActionListener {
 
         frame.add(upperPanel);
         frame.setVisible(true);
+
+        addTask = upperPanel.getAddTask();
+        addTask.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource().equals(addTask)) {
+            System.out.println("test");
+        }
     }
 }

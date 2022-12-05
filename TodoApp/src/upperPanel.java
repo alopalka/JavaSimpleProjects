@@ -2,18 +2,46 @@ import javax.swing.*;
 import java.awt.*;
 
 public class upperPanel extends JPanel {
+    private JTextField txtField = new JTextField();
+    private JButton addTask;
+
     public upperPanel() {
-        this.setBackground(Color.GRAY);
+
+        txtField.setPreferredSize(new Dimension(250, 30));
+        txtField.setEditable(true);
+        txtField.setText("test");
+        txtField.setHorizontalAlignment(JTextField.CENTER);
+        txtField.setLayout(null);
+
+        addTask = new JButton("Add");
+        addTask.setFocusable(false);
+        addTask.setBackground(new Color(9, 14, 27));
+        addTask.setForeground(new Color(196, 149, 79));
+        addTask.setPreferredSize(new Dimension(100, 35));
+        addTask.setHorizontalAlignment(JButton.CENTER);
+        addTask.setVerticalAlignment(JButton.CENTER);
+        addTask.setEnabled(true);
+
         this.setBounds(0, 0, 500, 150);
-        JTextField txtField = new JTextField();
-        JButton addTask = new JButton("Add");
-
-        txtField.setBounds(40, 30, 400, 50);
-        txtField.setEditable(false);
-
+        this.setBackground(Color.GRAY);
+        this.setLayout(new FlowLayout(FlowLayout.CENTER));
         this.add(txtField);
         this.add(addTask);
+    }
 
+    public JTextField getTxtField() {
+        return txtField;
+    }
 
+    public void setTxtField(JTextField txtField) {
+        this.txtField = txtField;
+    }
+
+    public JButton getAddTask() {
+        return addTask;
+    }
+
+    public void setAddTask(JButton addTask) {
+        this.addTask = addTask;
     }
 }

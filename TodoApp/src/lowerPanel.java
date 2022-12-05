@@ -1,2 +1,4 @@
-public class lowerPanel {
+import javax.swing.*;
+
+public class lowerPanel extends JPanel {
 }
