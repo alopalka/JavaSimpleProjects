@@ -7,6 +7,7 @@ public class TodoApp implements ActionListener {
 
     private upperPanel upperPanel = new upperPanel();
     private JFrame frame = new JFrame("Todo App");
+    private TaskList taskList = new TaskList();
 
     private JButton addTask;
 
@@ -19,10 +20,10 @@ public class TodoApp implements ActionListener {
     public TodoApp() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(WINDOWWIDTH, WINDOWHEIGHT);
-        frame.setLayout(null);
         frame.setResizable(false);
 
         frame.add(upperPanel);
+        frame.add(taskList);
         frame.setVisible(true);
 
         addTask = upperPanel.getAddTask();
@@ -32,7 +33,8 @@ public class TodoApp implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(addTask)) {
-            System.out.println("test");
+            Task task = new Task("ziemniaki",false);
+            taskList.add(task);
         }
     }
 }

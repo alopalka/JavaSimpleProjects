@@ -3,17 +3,15 @@ import java.awt.*;
 
 public class upperPanel extends JPanel {
     private JTextField txtField = new JTextField();
-    private JButton addTask;
+    private JButton addTask = new JButton("Add");
 
     public upperPanel() {
-
         txtField.setPreferredSize(new Dimension(250, 30));
         txtField.setEditable(true);
         txtField.setText("test");
         txtField.setHorizontalAlignment(JTextField.CENTER);
         txtField.setLayout(null);
 
-        addTask = new JButton("Add");
         addTask.setFocusable(false);
         addTask.setBackground(new Color(9, 14, 27));
         addTask.setForeground(new Color(196, 149, 79));
@@ -22,7 +20,7 @@ public class upperPanel extends JPanel {
         addTask.setVerticalAlignment(JButton.CENTER);
         addTask.setEnabled(true);
 
-        this.setBounds(0, 0, 500, 150);
+        this.setPreferredSize(new Dimension(500,250));
         this.setBackground(Color.GRAY);
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
         this.add(txtField);
