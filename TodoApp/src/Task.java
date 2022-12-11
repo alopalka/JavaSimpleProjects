@@ -6,12 +6,10 @@ public class Task extends JPanel {
     private boolean completed = false;
     private JTextField taskDetails;
 
-    public Task(String details, boolean completed) {
+    public Task(String details) {
         this.details = details;
-        this.completed = completed;
 
-//        this.setPreferredSize(new Dimension(400, 20));
-        this.setBounds(300, 0, 500, 200);
+        this.setMinimumSize(new Dimension(400, 20));
         this.setBackground(Color.red);
         this.setLayout(new BorderLayout());
 
@@ -20,7 +18,7 @@ public class Task extends JPanel {
         taskDetails.setBackground(Color.red);
 
         this.add(taskDetails);
-
+        this.setVisible(true);
     }
 
     public String getDetails() {

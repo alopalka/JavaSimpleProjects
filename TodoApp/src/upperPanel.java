@@ -20,7 +20,7 @@ public class upperPanel extends JPanel {
         addTask.setVerticalAlignment(JButton.CENTER);
         addTask.setEnabled(true);
 
-        this.setPreferredSize(new Dimension(500,250));
+        this.setMaximumSize(new Dimension(500,100));
         this.setBackground(Color.GRAY);
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
         this.add(txtField);
