@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class upperPanel extends JPanel {
+public class UpperPanel extends JPanel {
     private JTextField txtField = new JTextField();
     private JButton addTask = new JButton("Add");
 
-    public upperPanel() {
+    public UpperPanel() {
         txtField.setPreferredSize(new Dimension(250, 30));
         txtField.setEditable(true);
         txtField.setText("test");
@@ -20,7 +20,7 @@ public class upperPanel extends JPanel {
         addTask.setVerticalAlignment(JButton.CENTER);
         addTask.setEnabled(true);
 
-        this.setMaximumSize(new Dimension(500,100));
+        this.setMaximumSize(new Dimension(500, 100));
         this.setBackground(Color.GRAY);
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
         this.add(txtField);
