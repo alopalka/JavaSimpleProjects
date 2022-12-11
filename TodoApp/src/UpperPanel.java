@@ -42,4 +42,12 @@ public class UpperPanel extends JPanel {
     public void setAddTask(JButton addTask) {
         this.addTask = addTask;
     }
+
+    public String getTxtFieldValue(){
+        return txtField.getText();
+    }
+
+    public void resetTxtFieldValue(){
+        txtField.setText("");
+    }
 }

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -35,7 +36,19 @@ public class TodoAppFrame extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                taskList.add(new Task("zadanie 2"));
+                Task task = new Task(upperPanel.getTxtFieldValue());
+                taskList.add(task);
+                upperPanel.resetTxtFieldValue();
+
+                task.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+                        super.mousePressed(e);
+                        task.setCompleted(true);
+                        task.setBackground(Color.GRAY);
+                    }
+                });
+
                 revalidate();
             }
         });
