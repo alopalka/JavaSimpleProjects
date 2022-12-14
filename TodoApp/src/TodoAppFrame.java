@@ -1,3 +1,7 @@
+import panel.Task;
+import panel.TaskList;
+import panel.UpperPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -15,15 +19,15 @@ public class TodoAppFrame extends JFrame {
     private static final int WINDOWWIDTH = 500;
 
     public TodoAppFrame() {
+        this.setTitle("Todo App");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(WINDOWWIDTH, WINDOWHEIGHT);
         this.setResizable(false);
 
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.add(upperPanel);
-        mainPanel.add(taskList);
+        mainPanel.add(upperPanel,BorderLayout.NORTH);
+        mainPanel.add(taskList,BorderLayout.SOUTH);
 
-        taskList.add(new Task("zadanie 1"));
         this.add(mainPanel);
         this.setVisible(true);
 
@@ -37,7 +41,7 @@ public class TodoAppFrame extends JFrame {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 Task task = new Task(upperPanel.getTxtFieldValue());
-                taskList.add(task);
+                taskList.add(task,BorderLayout.CENTER);
                 upperPanel.resetTxtFieldValue();
 
                 task.addMouseListener(new MouseAdapter() {

@@ -1,13 +1,16 @@
+package panel;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class TaskList extends JPanel {
     public TaskList() {
-        GridLayout layout = new GridLayout(6, 1);
+        GridLayout layout = new GridLayout(7, 1);
         layout.setVgap(10);
+        layout.setHgap(10);
         this.setLayout(layout);
-        this.setMaximumSize(new Dimension(500, 600));
-        this.setBackground(Color.GREEN);
+        this.setMaximumSize(new Dimension(510, 650));
+        this.setBackground(new Color(195, 195, 195));
         this.setVisible(true);
     }
 }
