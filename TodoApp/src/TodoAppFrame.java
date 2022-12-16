@@ -25,8 +25,8 @@ public class TodoAppFrame extends JFrame {
         this.setResizable(false);
 
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.add(upperPanel,BorderLayout.NORTH);
-        mainPanel.add(taskList,BorderLayout.SOUTH);
+        mainPanel.add(upperPanel, BorderLayout.NORTH);
+        mainPanel.add(taskList, BorderLayout.SOUTH);
 
         this.add(mainPanel);
         this.setVisible(true);
@@ -41,18 +41,20 @@ public class TodoAppFrame extends JFrame {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 Task task = new Task(upperPanel.getTxtFieldValue());
-                taskList.add(task,BorderLayout.CENTER);
+                taskList.add(task, BorderLayout.CENTER);
+                taskList.numerateTasks();
                 upperPanel.resetTxtFieldValue();
 
-                task.addMouseListener(new MouseAdapter() {
+                task.getComplateBtn().addMouseListener(new MouseAdapter() {
                     @Override
-                    public void mousePressed(MouseEvent e) {
-                        super.mousePressed(e);
+                    public void mouseClicked(MouseEvent e) {
+                        super.mouseClicked(e);
                         task.setCompleted(true);
-                        task.setBackground(Color.GRAY);
+                        taskList.refreshTasks();
                     }
                 });
 
+                repaint();
                 revalidate();
             }
         });
