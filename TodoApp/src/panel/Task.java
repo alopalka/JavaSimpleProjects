@@ -15,7 +15,6 @@ public class Task extends JPanel {
 
     public Task(String details) {
         this.details = details;
-
         this.setMinimumSize(new Dimension(400, 20));
         this.setBackground(new Color(100, 100, 100));
         this.setLayout(new BorderLayout());
@@ -34,15 +33,14 @@ public class Task extends JPanel {
 
         complateBtn.setPreferredSize(new Dimension(40, 40));
         complateBtn.setBorder(BorderFactory.createEmptyBorder());
+        complateBtn.setFocusable(false);
+        complateBtn.setBackground(Color.WHITE);
+        complateBtn.setForeground(new Color(55, 55, 55));
 
         this.add(taskDetails, BorderLayout.CENTER);
         this.add(complateBtn, BorderLayout.EAST);
         this.add(index, BorderLayout.WEST);
         this.setVisible(true);
-    }
-
-    public String getDetails() {
-        return details;
     }
 
     public boolean isCompleted() {

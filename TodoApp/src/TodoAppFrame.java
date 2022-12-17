@@ -47,8 +47,8 @@ public class TodoAppFrame extends JFrame {
 
                 task.getComplateBtn().addMouseListener(new MouseAdapter() {
                     @Override
-                    public void mouseClicked(MouseEvent e) {
-                        super.mouseClicked(e);
+                    public void mousePressed(MouseEvent e) {
+                        super.mousePressed(e);
                         task.setCompleted(true);
                         taskList.refreshTasks();
                     }

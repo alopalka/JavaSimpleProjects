@@ -14,7 +14,7 @@ public class UpperPanel extends JPanel {
         txtField.setText("test");
         txtField.setHorizontalAlignment(JTextField.CENTER);
         txtField.setLayout(null);
-        txtField.setBorder(new LineBorder(new Color(55, 55, 55),1));
+        txtField.setBorder(new LineBorder(new Color(55, 55, 55), 1));
 
         addTask.setFocusable(false);
         addTask.setBackground(Color.white);
@@ -32,27 +32,15 @@ public class UpperPanel extends JPanel {
         this.add(addTask);
     }
 
-    public JTextField getTxtField() {
-        return txtField;
-    }
-
-    public void setTxtField(JTextField txtField) {
-        this.txtField = txtField;
-    }
-
     public JButton getAddTask() {
         return addTask;
     }
 
-    public void setAddTask(JButton addTask) {
-        this.addTask = addTask;
-    }
-
-    public String getTxtFieldValue(){
+    public String getTxtFieldValue() {
         return txtField.getText();
     }
 
-    public void resetTxtFieldValue(){
+    public void resetTxtFieldValue() {
         txtField.setText("");
     }
 }
